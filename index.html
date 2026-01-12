@@ -207,7 +207,7 @@
 
   <header>
     <h1>@Bojacktomoon</h1>
-    <img src="logo.png" alt="$BOJACK" class="logo">
+    <img src="logo.png" alt="$BOJACK Ticker Logo" class="logo">
     <div class="tagline">
       From depressed horse to <strong>moon-bound legend</strong> 🐴🚀
     </div>
@@ -240,6 +240,7 @@
       <div class="buttons">
         <a href="https://x.com/Bojacktomoon" class="btn btn-primary" target="_blank">Follow @Bojacktomoon on X</a>
         <a href="https://t.co/bnB1vn3uDE" class="btn btn-outline" target="_blank">Join Telegram</a>
+        <a href="https://dexscreener.com/solana/YOUR_PAIR_ADDRESS_HERE" class="btn btn-outline" target="_blank">Chart on Dexscreener</a>
       </div>
     </div>
   </main>
@@ -254,25 +255,31 @@
       const particle = document.createElement('div');
       particle.classList.add('particle');
       
+      // Random size between 8-24px
       const size = Math.random() * 16 + 8;
       particle.style.width = `${size}px`;
       particle.style.height = `${size}px`;
       
+      // Random horizontal position
       particle.style.left = `${Math.random() * 100}vw`;
       
+      // Random animation duration (8-20s) and delay
       const duration = Math.random() * 12 + 8;
       particle.style.animationDuration = `${duration}s`;
       particle.style.animationDelay = `${Math.random() * 5}s`;
       
       document.getElementById('particles').appendChild(particle);
       
+      // Remove after animation ends to prevent DOM bloat
       setTimeout(() => {
         particle.remove();
       }, (duration + 5) * 1000);
     }
 
+    // Create new particle every 400-800ms
     setInterval(createParticle, Math.random() * 400 + 400);
     
+    // Initial burst of particles
     for (let i = 0; i < 15; i++) {
       createParticle();
     }
